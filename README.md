@@ -10,21 +10,23 @@
    docker-compose up --build
 
 3. **После успешного запуска вы увидите**
-4. 
+ 
       Сервер запущен на http://localhost:8080
       Доступные маршруты:
       GET  /info     - JSON с количеством дней до Нового года
 
-5. **Проверить работу сервера(Postman)**
+4. **Проверить работу сервера(Postman)**
 
       Метод: GET
       URL: http://localhost:8080/info
       Нажать Send
 
       Ответ (пример для июня 2026 года)
+      ``` JSON
          {
             "days_before_new_year": 210
          }  
+      ```   
       Статус-код: 200 OK
       Content-Type: application/json
     
@@ -32,8 +34,10 @@
       Метод: POST
       URL: http://localhost:8080/info
       Ответ:
+      ``` JSON
          {
             "error": "Метод не поддерживается",
             "status": "Method Not Allowed"
          }
+      ```   
       Статус-код: 405 Method Not Allowed
